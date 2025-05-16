@@ -1,0 +1,20 @@
+---
+### 🤖 `.github/workflows/ci.yml`
+  ```yaml
+name: dqtool-ci
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run CLI on sample config
+        run: python dqcli.py run examples/users_rules.yaml
