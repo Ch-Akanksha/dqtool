@@ -1,0 +1,13 @@
+dataset: examples/users.csv
+rules:
+  - column: email
+    check: not_null
+  - column: age
+    check: range
+    min: 18
+    max: 99
+  - column: user_id
+    check: unique
+  - column: email
+    check: regex
+    pattern: "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
