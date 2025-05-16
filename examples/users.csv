@@ -1,0 +1,5 @@
+user_id,email,age
+1,a@example.com,25
+2,b@example.com,42
+3,,17
+3,invalid_email,101
