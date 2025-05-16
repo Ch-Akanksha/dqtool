@@ -52,6 +52,7 @@ def validate(config):
             print(f"⚠️ Unknown check: {check}")
 
 @app.command()
+@app.command()
 def run(config: str = typer.Argument(..., help="Path to the YAML config file")):
     "Run data quality checks from a YAML config file."
     config_data = load_config(config)
